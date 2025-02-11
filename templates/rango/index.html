@@ -6,7 +6,12 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Welcome to Rango!</h1>
+    <h1>Rango says...</h1>
+    {% if user.is_authenticated %}
+        howdy {{ user.username }}!
+    {% else %}
+        hey there partner!
+    {% endif %}
     <p>{{ boldmessage }}</p>
 
     <h2>Most Popular Categories</h2>
